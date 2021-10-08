@@ -11,7 +11,7 @@ export default class Dashboard extends React.Component {
 
     render() {
         return (
-            <div className="ag-theme-alpine" style={{height: 400, width: 600}}>
+            <div className="ag-theme-blue" style={{height: 500, width: 1200}}>
                 <AgGridReact
                     rowData={this.rowData}>
                     <AgGridColumn field="make"></AgGridColumn>
