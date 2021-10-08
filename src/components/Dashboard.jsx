@@ -1,25 +1,24 @@
 import React from 'react';
-import { Container, Toast } from 'react-bootstrap';
+import {AgGridColumn, AgGridReact} from 'ag-grid-react';
 
 export default class Dashboard extends React.Component {
 
-    getText() {
-        return ['Coca Cola Ltd.','Pepsi Co.','Sprite Co.'];
-    }
+    rowData = [
+        {make: "Toyota", model: "Celica", price: 35000},
+        {make: "Ford", model: "Mondeo", price: 32000},
+        {make: "Porsche", model: "Boxter", price: 72000}
+    ];
 
     render() {
         return (
-            <Container>
-                <Toast>
-                    <Toast.Body>{this.getText()[0]}</Toast.Body>
-                </Toast>
-                <Toast>
-                    <Toast.Body>{this.getText()[1]}</Toast.Body>
-                </Toast>
-                <Toast>
-                    <Toast.Body>{this.getText()[2]}</Toast.Body>
-                </Toast>
-            </Container>
+            <div className="ag-theme-alpine" style={{height: 400, width: 600}}>
+                <AgGridReact
+                    rowData={this.rowData}>
+                    <AgGridColumn field="make"></AgGridColumn>
+                    <AgGridColumn field="model"></AgGridColumn>
+                    <AgGridColumn field="price"></AgGridColumn>
+                </AgGridReact>
+            </div>
         )
     }
 } 
