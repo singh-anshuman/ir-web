@@ -4,19 +4,24 @@ import {AgGridColumn, AgGridReact} from 'ag-grid-react';
 export default class Dashboard extends React.Component {
 
     rowData = [
-        {make: "Toyota", model: "Celica", price: 35000},
-        {make: "Ford", model: "Mondeo", price: 32000},
-        {make: "Porsche", model: "Boxter", price: 72000}
+        {id: 1, symbol: "SBIN", name: "State Bank of India", price: 430, quantity: 200},
+        {id: 2, symbol: "REDI", name: "Redington India Ltd.", price: 520, quantity: 50},
+        {id: 3, symbol: "RELI", name: "Reliance Industries", price: 1010, quantity: 10},
+        {id: 4, symbol: "APPL", name: "Apple Ltd.", price: 134, quantity: 300},
+        {id: 4, symbol: "SMSNG", name: "Samsung Ltd.", price: 87, quantity: 250}
+        
     ];
 
     render() {
         return (
-            <div className="ag-theme-blue" style={{height: 500, width: 1200}}>
+            <div className="ag-theme-alpine-dark" style={{height: 500, width: 1295}}>
                 <AgGridReact
                     rowData={this.rowData}>
-                    <AgGridColumn field="make"></AgGridColumn>
-                    <AgGridColumn field="model"></AgGridColumn>
+                    <AgGridColumn field="id"></AgGridColumn>
+                    <AgGridColumn field="symbol"></AgGridColumn>
+                    <AgGridColumn field="name"></AgGridColumn>
                     <AgGridColumn field="price"></AgGridColumn>
+                    <AgGridColumn field="quantity"></AgGridColumn>
                 </AgGridReact>
             </div>
         )
